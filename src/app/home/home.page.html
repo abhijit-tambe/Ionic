@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-button routerLink="/list" slot="start">
+      <!--<ion-menu-button></ion-menu-button>-->
+      <!--<ion-button slot="start"(click)="close()">-->
+        <!--<ion-menu-button></ion-menu-button>-->
+        <ion-icon name="arrow-round-back"></ion-icon>
+      <!--</ion-button>-->
+    </ion-button>
+    <ion-title >Add Exercise</ion-title>
+    <!--<ion-button slot="end"><ion-icon name="add-circle"></ion-icon></ion-button>-->
+    <!--<ion-icon slot="end" name="add-circle"></ion-icon>-->
+    <!--<ion-button padding-end="10%" routerLink="/adddaywork" slot ="end"><ion-icon name="add"></ion-icon></ion-button>-->
+    <!--<ion-button padding-end="20%" routerLink="/list" slot ="end"><ion-icon name="add"></ion-icon></ion-button>-->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!--<ion-item>-->
+    <!--<ion-label position="fixed">Title</ion-label>-->
+    <!--<ion-input [(ngModel)]="newItem.title"></ion-input>-->
+  <!--</ion-item>-->
+
+  <!--<ion-item>-->
+    <!--<ion-label position="fixed">Value</ion-label>-->
+    <!--<ion-input [(ngModel)]="newItem.value"></ion-input>-->
+  <!--</ion-item>-->
+  <!--<ion-item>-->
+    <!--<ion-label position="fixed">days</ion-label>-->
+    <!--<ion-input [(ngModel)]="newItem.days"></ion-input>-->
+  <!--</ion-item>-->
+  <!--<ion-item *ngFor="let b of items">-->
+  <ion-card>
+    <ion-item>
+    <ion-label position="fixed"> Name : </ion-label>
+    <ion-input [(ngModel)]="newItem.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="fixed">no of Sets : </ion-label>
+    <ion-input [(ngModel)]="newItem.sets" type="number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="fixed">No of Reps : </ion-label>
+    <ion-input [(ngModel)]="newItem.reps" type="number"></ion-input>
+  </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Weight(lbs) : </ion-label>
+      <ion-input [(ngModel)]="newItem.weight" type="number"></ion-input>
+    </ion-item>
+  <ion-button expand="full" (click)="addItem()">Add</ion-button>
+  </ion-card>
+    <!--</ion-item>-->
+  <!--<ion-list #mylist>-->
+
+    <!--<ion-list-header>-->
+      <!--<ion-label>My Items</ion-label>-->
+    <!--</ion-list-header>-->
+
+    <!--<ion-item-sliding *ngFor="let item of items">-->
+
+      <!--<ion-item>-->
+
+        <!--&lt;!&ndash;<ion-label text-wrap *ngFor="let a of item[2].exercise">&ndash;&gt;-->
+        <!--<ion-label>-->
+          <!--<p>{{ item.days }}</p>-->
+          <!--<p>{{ item.value }}</p>-->
+
+          <!--<p>{{item.name}}</p>-->
+          <!--<p>{{item.sets}}</p>-->
+          <!--<p>{{item.reps}}</p>-->
+          <!--&lt;!&ndash;<h3>{{ a.item.exercise.name }}</h3>&ndash;&gt;-->
+          <!--&lt;!&ndash;<ion-text color="secondary">&ndash;&gt;-->
+            <!--&lt;!&ndash;<p>dsadsa</p>&ndash;&gt;-->
+            <!--&lt;!&ndash;<p>{{ item.exercise.sets }}</p>&ndash;&gt;-->
+            <!--&lt;!&ndash;<p>{{ item.exercise.reps }}</p>&ndash;&gt;-->
+          <!--&lt;!&ndash;</ion-text>&ndash;&gt;-->
+          <!--&lt;!&ndash;<p>{{ item.modified | date:'short'}}</p>&ndash;&gt;-->
+
+          <!--&lt;!&ndash;<p>{{ item.sets}}</p>&ndash;&gt;-->
+        <!--</ion-label>-->
+      <!--</ion-item>-->
+
+      <!--<ion-item-options side="end">-->
+        <!--<ion-item-option color="secondary" (click)="updateItem(item)">Update</ion-item-option>-->
+        <!--<ion-item-option color="danger" (click)="deleteItem(item)">Delete</ion-item-option>-->
+      <!--</ion-item-options>-->
+    <!--</ion-item-sliding>-->
+
+  <!--</ion-list>-->
+  <!--<ion-button routerLink="/list"></ion-button>-->
+</ion-content>

@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Diet Plan</ion-title>
+    <ion-button padding-end="20%" [routerLink]="['/addnutrition']" slot ="end"><ion-icon name="add"></ion-icon></ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card >
+    <ion-card-content>
+
+      <ion-list #myDlist>
+
+        <ion-list-header>
+          <h1>Diet list : </h1>
+        </ion-list-header>
+        <ion-list *ngFor="let diet of diets; index as i">
+          <ion-item-sliding >
+            <ion-item-options side="start">
+              <!--<ion-item-option color="secondary" (click)="updateItem(item)">Update</ion-item-option>-->
+              <ion-item-option  *ngIf="!diet.completed" color="warning" (click)="setdone(diet)"> <ion-button> <ion-icon  name="checkmark"></ion-icon> </ion-button>  </ion-item-option>
+              <ion-item-option *ngIf="diet.completed" color="warning" (click)="setdone(diet)"><ion-button><ion-icon name="close"></ion-icon> </ion-button>  </ion-item-option>
+            </ion-item-options>
+            <ion-item  >
+              <!--<div >-->
+              <!--<ion-item-divider> Exercise {{i+1}}.</ion-item-divider>-->
+              <!--<ion-card>-->
+              <!--<ion-label text-wrap *ngFor="let a of item[2].exercise">-->
+              <ion-label text-wrap>
+                <!--<p>{{ item.days }}</p>-->
+                <!--<p>{{ item.value }}</p>-->
+
+                <ion-grid [ngClass]="setclasses(diet)">
+                  <ion-row><ion-label><h2>Food item {{i+1}}.</h2></ion-label></ion-row>
+                  <ion-row><ion-col><ion-label> Name : {{diet.name}} X Quantity : {{diet.unit}}</ion-label></ion-col></ion-row>
+
+                  <ion-row>
+
+                      <!--<ion-col></ion-col>-->
+                      <ion-col><ion-label> Protein : {{diet.pro}}</ion-label></ion-col>
+                    <ion-col><ion-label> Carbs : {{diet.carb}}</ion-label></ion-col>
+                    <ion-col><ion-label> Fats : {{diet.fat}}</ion-label></ion-col>
+                    <ion-col><ion-label> Calories : {{diet.cal}}</ion-label></ion-col>
+                  </ion-row>
+                </ion-grid>
+                <!--<h3>{{ a.item.exercise.name }}</h3>-->
+                <!--<ion-text color="secondary">-->
+                <!--<p>dsadsa</p>-->
+                <!--<p>{{ item.exercise.sets }}</p>-->
+                <!--<p>{{ item.exercise.reps }}</p>-->
+                <!--</ion-text>-->
+                <!--<p>{{ item.modified | date:'short'}}</p>-->
+
+                <!--<p>{{ item.sets}}</p>-->
+              </ion-label>
+              <!--</ion-card>-->
+              <!--</div>-->
+            </ion-item>
+
+            <ion-item-options side="end">
+              <!--<ion-item-option color="secondary" (click)="updateItem(item)">Update</ion-item-option>-->
+              <ion-item-option color="danger" (click)="deleteDiet(diet)"><ion-button> <ion-icon name="trash"></ion-icon> </ion-button></ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+      </ion-list>
+
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
