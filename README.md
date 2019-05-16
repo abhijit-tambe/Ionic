@@ -1,2 +1,2 @@
 # Ionic
-web pages using Ionic framework
+workout app using ionic 4 and Angular 7
