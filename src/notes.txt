@@ -1,0 +1,7 @@
+1. main array structure is in models/Excercise
+2. real data is in services/workdata
+3. its pulled in components/workcomp
+    a] html ngfor iterates through each main array of days
+4. it shows the data(day) inside the selected iteration in workdays
+5. it is exported and imported in work details iterated data's exercise array
+5. all wrapped in workout page
