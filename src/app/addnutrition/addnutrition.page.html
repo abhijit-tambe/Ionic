@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-button routerLink="/diet" slot="start">
+      <ion-icon name="arrow-round-back"></ion-icon>
+    </ion-button>
+    <ion-title>Add Food and nutrition</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item>
+      <ion-label position="fixed">Food Name : </ion-label>
+      <ion-input [(ngModel)]="newDiet.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Protein : </ion-label>
+      <ion-input [(ngModel)]="newDiet.pro" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Carbs : </ion-label>
+      <ion-input [(ngModel)]="newDiet.carb" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Fats : </ion-label>
+      <ion-input [(ngModel)]="newDiet.fat" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Quantity : </ion-label>
+      <ion-input [(ngModel)]="newDiet.unit" type="number"></ion-input>
+    </ion-item>
+
+    <!--<ion-grid>-->
+      <!--<ion-row>-->
+        <!--<ion-col>-->
+          <!--<ion-label position="fixed">Name : </ion-label>-->
+          <!--<ion-input [(ngModel)]="newDiet.name"></ion-input>-->
+            <!--</ion-col>-->
+          <!--</ion-row>-->
+      <!--<ion-row>-->
+        <!--<ion-col>-->
+          <!--&lt;!&ndash;<ion-item>&ndash;&gt;-->
+          <!--<ion-label position="fixed">Carbohydraes : </ion-label>-->
+          <!--<ion-input [(ngModel)]="newDiet.name"></ion-input>-->
+          <!--&lt;!&ndash;</ion-item>&ndash;&gt;-->
+        <!--</ion-col>-->
+      <!--</ion-row>-->
+        <!--</ion-grid>-->
+        <ion-button expand="full" (click)="addDiet()">Add</ion-button>
+      </ion-card>
+    </ion-content>
