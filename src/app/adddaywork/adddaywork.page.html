@@ -1,0 +1,71 @@
+<!--<ion-header>-->
+  <!--<ion-toolbar>-->
+    <!--<ion-title>adddaywork</ion-title>-->
+  <!--</ion-toolbar>-->
+<!--</ion-header>-->
+
+
+<!--<ion-header>-->
+  <!--<ion-toolbar color="secondary">-->
+    <!--<ion-buttons slot="start">-->
+      <!--<ion-menu-button></ion-menu-button>-->
+    <!--</ion-buttons>-->
+    <!--<ion-title>add workout day</ion-title>-->
+  <!--</ion-toolbar>-->
+<!--</ion-header>-->
+
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-button slot="start" routerLink="/workout">
+      <!--<ion-menu-button></ion-menu-button>-->
+      <ion-icon name="arrow-round-back"></ion-icon>
+    </ion-button>
+    <ion-title >add workout day</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!--<ion-content>-->
+
+
+  <ion-content>
+    hello
+    <ion-item>
+      <ion-label position="fixed">Title</ion-label>
+      <ion-input [(ngModel)]="newWork.day"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="fixed">Value</ion-label>
+      <ion-input [(ngModel)]="newWork.exercise"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" (click)="addWork()">Add Item!</ion-button>
+
+    <ion-list #mylist>
+
+      <ion-list-header>
+        <ion-label>My Items</ion-label>
+      </ion-list-header>
+
+      <ion-item-sliding *ngFor="let work of works">
+
+        <ion-item>
+          <ion-label text-wrap>
+            <h3>{{ work.day }}</h3>
+            <ion-text color="secondary">
+              <p>{{ work.exercise }}</p>
+            </ion-text>
+            <!--<p>{{ item.modified | date:'short'}}</p>-->
+          </ion-label>
+        </ion-item>
+
+        <ion-item-options side="end">
+          <!--<ion-item-option color="secondary" (click)="updateItem(item)">Update</ion-item-option>-->
+          <ion-item-option color="danger" (click)="deleteWork(work)">Delete</ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+
+    </ion-list>
+  </ion-content>
+
+<!--</ion-content>-->
